@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发布通道已打通 · fengnewsky-glitch</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px 20px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #0b1220 100%);
+    color: #e2e8f0;
+  }
+  .card {
+    width: 100%; max-width: 720px;
+    background: rgba(30, 41, 59, .72);
+    border: 1px solid rgba(148, 163, 184, .22);
+    border-radius: 20px;
+    padding: 44px 40px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(34, 197, 94, .14);
+    border: 1px solid rgba(34, 197, 94, .38);
+    color: #4ade80;
+    font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; }
+  h1 { font-size: 30px; line-height: 1.3; letter-spacing: -.5px; margin-bottom: 12px; }
+  h1 .grad {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sub { color: #94a3b8; font-size: 15px; line-height: 1.75; margin-bottom: 30px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-bottom: 30px; }
+  .item {
+    background: rgba(15, 23, 42, .6);
+    border: 1px solid rgba(148, 163, 184, .16);
+    border-radius: 12px; padding: 16px 18px;
+  }
+  .item .k { font-size: 12px; color: #64748b; letter-spacing: .4px; margin-bottom: 7px; }
+  .item .v { font-size: 14px; color: #e2e8f0; font-weight: 600; word-break: break-all; }
+  .steps { border-top: 1px solid rgba(148, 163, 184, .16); padding-top: 26px; }
+  .steps h2 { font-size: 15px; color: #cbd5e1; margin-bottom: 16px; font-weight: 600; }
+  .step { display: flex; gap: 12px; margin-bottom: 13px; font-size: 14px; color: #94a3b8; line-height: 1.7; }
+  .num {
+    flex: 0 0 22px; height: 22px; border-radius: 50%;
+    background: rgba(96, 165, 250, .16); border: 1px solid rgba(96, 165, 250, .4);
+    color: #60a5fa; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; margin-top: 2px;
+  }
+  .step code {
+    background: rgba(15, 23, 42, .85); border: 1px solid rgba(148, 163, 184, .2);
+    padding: 2px 7px; border-radius: 5px; font-size: 12.5px; color: #7dd3fc;
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  }
+  footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(148, 163, 184, .16);
+           font-size: 12.5px; color: #64748b; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="badge"><span class="dot"></span> 发布通道运行正常</div>
+
+    <h1>线上线下已经<span class="grad">彻底打通</span></h1>
+    <p class="sub">
+      这个页面本身就是一个证明 —— 它从你电脑上的文件夹，经由 GitHub，
+      现在正通过公网地址被你的浏览器打开。
+    </p>
+
+    <div class="grid">
+      <div class="item"><div class="k">GITHUB 账号</div><div class="v">fengnewsky-glitch</div></div>
+      <div class="item"><div class="k">本地目录</div><div class="v">WorkBuddy\...\my-site</div></div>
+      <div class="item"><div class="k">线上地址</div><div class="v">fengnewsky-glitch.github.io</div></div>
+      <div class="item"><div class="k">发布方式</div><div class="v">GitHub Pages</div></div>
+    </div>
+
+    <div class="steps">
+      <h2>以后怎么发布新内容</h2>
+      <div class="step"><span class="num">1</span><span>把网页文件（<code>index.html</code> 等）放进 <code>my-site</code> 文件夹</span></div>
+      <div class="step"><span class="num">2</span><span>告诉我一声「发布一下」，我会执行 <code>git add</code> → <code>commit</code> → <code>push</code></span></div>
+      <div class="step"><span class="num">3</span><span>等约 30 秒～1 分钟，刷新网址就能看到新内容</span></div>
+      <div class="step"><span class="num">4</span><span>push 已经自动复用登录令牌，<strong>不需要再输密码</strong></span></div>
+    </div>
+
+    <footer>
+      <span>GitHub Pages · 自动构建</span>
+      <span id="stamp">—</span>
+    </footer>
+  </main>
+<script>
+  document.getElementById('stamp').textContent =
+    '页面加载于 ' + new Date().toLocaleString('zh-CN', { hour12: false });
+</script>
+</body>
+</html>
