@@ -1,0 +1,7 @@
+node_modules/
+.netlify/
+.local/
+.env
+.env.*
+!.env.example
+coverage/
