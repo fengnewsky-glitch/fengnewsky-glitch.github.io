@@ -1,0 +1,96 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>丸承三百载 · 交互逻辑示意</title><style>:root{--border:#e3e5e8;--foreground:#222;--muted-foreground:#777}*{box-sizing:border-box}body{margin:0;background:#fff;color:#222;font:15px/1.55 "Microsoft YaHei","PingFang SC",sans-serif}main{max-width:1000px;margin:auto;padding:34px 32px}h2{font-size:22px;line-height:1.3;margin:0 0 6px}h3{font-size:19px;font-weight:600}.viz-row{display:flex;gap:18px;flex-wrap:wrap}.text-small{font-size:13px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:8px 12px;background:#fff;border:1px solid #dedfe3;border-radius:10px;color:#222;font:inherit;cursor:pointer;touch-action:manipulation}.btn:hover{border-color:#8aafef}.btn:focus-visible{outline:3px solid #9bc4ff;outline-offset:2px}.btn[aria-pressed=true]{background:#3d7fea;border-color:#3d7fea;color:#fff}.btn-block{display:flex;width:100%;line-height:1.2}.btn-ghost{border:0;color:#777;padding-left:6px}.btn-ghost:hover{color:#275ab0}.wanji-branch{border-color:#e1e1e1!important}.wanji-intro{font-size:14px}.wanji-step i,.btn i{font-style:normal}.wanji-state{margin-top:22px}.hint{font-size:13px;color:#777;margin:18px 0 0}.screen-note{color:#777;font-size:12px;margin-top:24px}@media(max-width:460px){main{padding:24px 16px}.btn-block{font-size:13px;padding:9px 4px}.wanji-intro{font-size:13px}.wanji-menu .btn{min-height:44px}.wanji-stages{gap:18px 12px!important}}</style></head><body><main><div id="wanji-flow-v1">
+  <h2>丸承三百载</h2>
+  <div class="viz-row text-small"><span>交互逻辑示意</span><span>① 源起 → ② 汇流 → ③ 提速 → ④ 智造</span></div>
+  <div class="wanji-stages" aria-label="四个阶段始终可见">
+    <section data-stage="0">
+      <button class="btn btn-block" type="button" data-open="0" aria-expanded="false" aria-controls="wanji-branch-0"><i aria-hidden="true">☝</i><span>① 源起<br>竹匾上的手工时代</span></button>
+      <div id="wanji-branch-0" class="wanji-branch" hidden></div>
+    </section>
+    <section data-stage="1">
+      <button class="btn btn-block" type="button" data-open="1" aria-expanded="false" aria-controls="wanji-branch-1"><i aria-hidden="true">⚙</i><span>② 汇流<br>公私合营与半机械化</span></button>
+      <div id="wanji-branch-1" class="wanji-branch" hidden></div>
+    </section>
+    <section data-stage="3">
+      <button class="btn btn-block" type="button" data-open="3" aria-expanded="false" aria-controls="wanji-branch-3"><i aria-hidden="true">♧</i><span>④ 智造<br>从联动线到智慧工厂</span></button>
+      <div id="wanji-branch-3" class="wanji-branch" hidden></div>
+    </section>
+    <section data-stage="2">
+      <button class="btn btn-block" type="button" data-open="2" aria-expanded="false" aria-controls="wanji-branch-2"><i aria-hidden="true">ϟ</i><span>③ 提速<br>工艺现代化的三级跳</span></button>
+      <div id="wanji-branch-2" class="wanji-branch" hidden></div>
+    </section>
+  </div>
+  <div class="text-small wanji-state" role="status" aria-live="polite">首页 · 四个阶段入口</div>
+</div>
+<style>
+  #wanji-flow-v1 .wanji-stages{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 28px;margin-top:20px;align-items:start}
+  #wanji-flow-v1 section{min-width:0}
+  #wanji-flow-v1 .wanji-branch{margin:14px 0 4px;padding-left:12px;border-left:2px solid var(--border)}
+  #wanji-flow-v1 .wanji-intro{margin:0 0 12px;color:var(--foreground)}
+  #wanji-flow-v1 .wanji-menu{display:flex;flex-wrap:wrap;gap:8px}
+  #wanji-flow-v1 .wanji-detail{margin-top:16px}
+  #wanji-flow-v1 .wanji-detail h3{margin:0 0 10px}
+  #wanji-flow-v1 .wanji-detail p{margin:8px 0}
+  #wanji-flow-v1 .wanji-actions{margin-top:12px}
+  #wanji-flow-v1 .wanji-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px;margin-top:12px}
+  #wanji-flow-v1 .wanji-step{display:flex;align-items:center;gap:8px}
+  #wanji-flow-v1 .wanji-state{margin-top:20px;color:var(--muted-foreground)}
+  #wanji-flow-v1 [hidden]{display:none!important}
+  @media(max-width:460px){#wanji-flow-v1 .wanji-stages{gap:20px 12px}#wanji-flow-v1 .wanji-menu{flex-direction:column;align-items:start}#wanji-flow-v1 .wanji-steps{grid-template-columns:1fr}#wanji-flow-v1 .wanji-branch{padding-left:8px}}
+</style>
+<script>
+(()=>{
+ const root=document.getElementById('wanji-flow-v1');
+ const icons={"hand":"☝","cog":"⚙","network":"♧","zap":"ϟ","store":"⌂","eye":"◉","factory":"▦","scale":"⚖","flask-conical":"⚗","scan":"◈","droplets":"◌","rotate-cw":"↻","layers":"▱","sun":"☼"};
+ const stages=[
+  {name:'源起',intro:'在早期的“前店后坊”阶段并未将“药丸”作为独立剂型单列，但丸剂生产的基础工艺——泛制法已经存在。',items:[
+   {name:'老号并立',icon:'store',html:'<p>黄中璜 · 1662</p><p>保滋堂 · 1669</p><p>贵宁堂马伯良 · 1820</p><p>前店后作坊，膏丹丸散手工制售。</p>'},
+   {name:'手工成型',icon:'hand',html:'<div class="wanji-steps"><div class="wanji-step"><i aria-hidden="true">◌</i><span>① 起模</span></div><div class="wanji-step"><i aria-hidden="true">↻</i><span>② 成型</span></div><div class="wanji-step"><i aria-hidden="true">▱</i><span>③ 盖面</span></div><div class="wanji-step"><i aria-hidden="true">☼</i><span>④ 干燥</span></div></div><p>竹匾起模 → 成型 → 盖面。</p><p>“四团两撞一翻身”</p>'},
+   {name:'经验判定',icon:'eye',html:'<p>日晒或土炕烘房干燥。</p><p>成色全凭眼看、手摸、口尝，没有量化标准。</p>'}
+  ]},
+  {name:'汇流',intro:'散落的药铺汇成一家厂：三厂公私合营并立，竹匾第一次让位给会转的铜锅——泛丸原理未变，组织与器具先换了一代。',items:[
+   {name:'合营并厂',icon:'factory',html:'<p>1956 三厂并立；1961 磨粉独立成厂，丸剂由作坊转入厂房。</p>'},
+   {name:'器具换代',icon:'cog',html:'<p>竹匾换成铜制泛丸锅（包衣球），干燥升级热风烘房。</p>'},
+   {name:'最早定量',icon:'scale',html:'<p>出现“查数计量”起模法——第一次告别全凭手感。</p>'}
+  ]},
+  {name:'提速',intro:'二十年连跳三级：研发立品、装备换速、工艺与标准并起——丸剂生产由“半机械”跃入“现代化”，干燥从“小时”变成“分钟”。',items:[
+   {name:'研发立品',icon:'flask-conical',html:'<p>1981 消渴丸上市。</p><p>1983 滋肾育胎丸上市。</p>'},
+   {name:'制丸改法',icon:'cog',html:'<p>1985 蜜丸转塑制法（螺旋挤条＋制丸刀轮），水丸转机械泛制。</p>'},
+   {name:'关键一跃',icon:'zap',html:'<p>1997 微波干燥灭菌线。</p><p>湿丸干燥：10 小时 → 10 分钟。</p><p>溶散：100 → 50 分钟。</p>'}
+  ]},
+  {name:'智造',intro:'一条联动线把分散的设备连成序贯流程；一座智慧工厂把经验变成参数，把“事后检验”变成“在线拦截”。',items:[
+   {name:'首创联动',icon:'network',html:'<p>2008 建成中药机制丸联动生产线，开启标准化连线生产。</p>'},
+   {name:'精密升级',icon:'scan',html:'<p>2012 自主研发中药丸剂无孔薄膜包衣技术实现产业化。</p>'},
+   {name:'智慧产线',icon:'factory',html:'<p>2023 三期智慧工厂投产。</p><p>产能 +148%；人均效率约 3 倍；人力成本 −74%。</p>'}
+  ]}
+ ];
+ let state={stage:-1,item:-1};
+ function render(){
+  root.querySelectorAll('[data-open]').forEach(button=>{
+   const index=Number(button.dataset.open),selected=index===state.stage;
+   button.setAttribute('aria-expanded',String(selected));
+   button.setAttribute('aria-pressed',String(selected));
+   const branch=root.querySelector('#wanji-branch-'+index);
+   branch.hidden=!selected;
+   if(!selected){branch.innerHTML='';return;}
+   const stage=stages[index];
+   branch.innerHTML='<p class="wanji-intro text-small">'+stage.intro+'</p><div class="wanji-menu" aria-label="一级菜单">'+stage.items.map((item,i)=>'<button class="btn" type="button" data-item="'+i+'" aria-expanded="'+(i===state.item)+'" aria-pressed="'+(i===state.item)+'" aria-controls="wanji-detail-'+index+'"><i aria-hidden="true">'+(icons[item.icon]||'◇')+'</i>'+item.name+'</button>').join('')+'</div><div id="wanji-detail-'+index+'" class="wanji-detail"'+(state.item<0?' hidden':'')+'>'+(state.item<0?'':'<h3>'+stage.items[state.item].name+'</h3>'+stage.items[state.item].html+'<div class="wanji-actions"><button class="btn btn-ghost" type="button" data-close-detail>收起详情</button></div>')+'</div><div class="wanji-actions"><button class="btn btn-ghost" type="button" data-close-stage>收起本阶段</button></div>';
+  });
+  root.querySelector('.wanji-state').textContent=state.stage<0?'首页 · 四个阶段入口':'当前：'+stages[state.stage].name+(state.item<0?' → 三个一级菜单':' → '+stages[state.stage].items[state.item].name+' → 二级内容');
+  if(window.lucide)window.lucide.createIcons({attrs:{width:16,height:16}});
+ }
+ root.addEventListener('click',event=>{
+  const button=event.target.closest('button');
+  if(!button||!root.contains(button))return;
+  let focusKey=null;
+  if(button.hasAttribute('data-open')){const stage=Number(button.dataset.open);state={stage:state.stage===stage?-1:stage,item:-1};}
+  else if(button.hasAttribute('data-item')){const item=Number(button.dataset.item);state.item=state.item===item?-1:item;focusKey='[data-item="'+item+'"]';}
+  else if(button.hasAttribute('data-close-detail')){focusKey='[data-item="'+state.item+'"]';state.item=-1;}
+  else if(button.hasAttribute('data-close-stage')){focusKey='[data-open="'+state.stage+'"]';state={stage:-1,item:-1};}
+  else return;
+  render();
+  if(focusKey){const target=root.querySelector(focusKey);if(target)target.focus({preventScroll:true});}
+ });
+ render();
+})();
+</script>
+<p class="hint">点击阶段，展开介绍和三个主题；再点击主题，查看内容。点击其他入口可直接切换。</p><p class="screen-note">交互逻辑确认稿 · 实际透明屏效果以上屏验证为准</p></main></body></html>
