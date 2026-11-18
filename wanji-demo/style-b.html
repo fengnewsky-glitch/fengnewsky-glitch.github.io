@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#07121f">
+  <meta name="description" content="丸承三百载：丸剂生产演变的四阶段交互演示。">
+  <title>丸承三百载 · 科技环廊方案</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="variant-b.css">
+  <script src="app.js" defer></script>
+  <script src="variant.js" defer></script>
+</head>
+<body class="variant-b">
+  <div class="preview-environment" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="masthead">
+      <div class="edition"><span class="edition-dot"></span><a class="design-back" href="designs.html">设计方案</a> <span>B · 科技环廊</span></div>
+      <div class="title-group"><p class="eyebrow">丸剂的生产演变</p><h1>丸承三百载</h1></div>
+      <div class="view-tools">
+        <button id="background-toggle" type="button" aria-pressed="false" aria-label="切换透明区域示意背景"><span data-icon="grid"></span><span>透明示意</span></button>
+        <button id="fullscreen-toggle" type="button" aria-label="全屏展示"><span data-icon="expand"></span><span class="fullscreen-label">全屏</span></button>
+      </div>
+    </header>
+
+    <main class="exhibit" aria-label="丸剂生产演变四个阶段">
+      <svg class="journey-lines" viewBox="0 0 1400 720" preserveAspectRatio="none" aria-hidden="true">
+        <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="none" stroke="currentColor"/></marker></defs>
+        <path d="M800 80 C1040 80 1190 170 1220 290" marker-end="url(#arrow)"/>
+        <path d="M1220 410 C1190 550 1050 640 800 640" marker-end="url(#arrow)"/>
+        <path d="M600 640 C350 640 210 550 180 410" marker-end="url(#arrow)"/>
+      </svg>
+
+      <button class="stage-node stage-0" type="button" data-stage="0" aria-expanded="false" aria-controls="stage-content">
+        <span class="stage-visual"><img src="assets/handcraft.png" alt="竹匾手工泛丸示意插画"><span class="stage-number">01</span><span class="node-emblem" data-icon="hand"></span></span>
+        <span class="stage-kicker">第一阶段</span><span class="stage-name">源起</span><span class="stage-subtitle">竹匾上的手工时代</span><span class="stage-action">轻触展开 <span aria-hidden="true">＋</span></span>
+      </button>
+      <button class="stage-node stage-1" type="button" data-stage="1" aria-expanded="false" aria-controls="stage-content">
+        <span class="stage-visual"><img src="assets/tools.png" alt="传统制药器具示意插画"><span class="stage-number">02</span><span class="node-emblem" data-icon="gear"></span></span>
+        <span class="stage-kicker">第二阶段</span><span class="stage-name">汇流</span><span class="stage-subtitle">公私合营与半机械化</span><span class="stage-action">轻触展开 <span aria-hidden="true">＋</span></span>
+      </button>
+      <button class="stage-node stage-2" type="button" data-stage="2" aria-expanded="false" aria-controls="stage-content">
+        <span class="stage-visual"><img src="assets/workshop.jpg" alt="机械化泛丸制丸车间"><span class="stage-number">03</span><span class="node-emblem" data-icon="speed"></span></span>
+        <span class="stage-kicker">第三阶段</span><span class="stage-name">提速</span><span class="stage-subtitle">工艺现代化的三级跳</span><span class="stage-action">轻触展开 <span aria-hidden="true">＋</span></span>
+      </button>
+      <button class="stage-node stage-3" type="button" data-stage="3" aria-expanded="false" aria-controls="stage-content">
+        <span class="stage-visual"><img src="assets/production.jpg" alt="丸剂机械制丸生产线"><span class="stage-number">04</span><span class="node-emblem" data-icon="network"></span></span>
+        <span class="stage-kicker">第四阶段</span><span class="stage-name">智造</span><span class="stage-subtitle">从联动线到智慧工厂</span><span class="stage-action">轻触展开 <span aria-hidden="true">＋</span></span>
+      </button>
+
+      <section class="focus-area" aria-label="阶段展开区域">
+        <div class="home-center" id="home-center">
+          <div class="roundel"><span class="roundel-ring"></span><span class="roundel-character">丸</span><span class="roundel-caption">承 · 三 · 百 · 载</span></div>
+          <p class="home-sequence">手工 <span>→</span> 半机械化 <span>→</span> 现代化 <span>→</span> 智造</p>
+          <p class="home-prompt"><span data-icon="touch"></span>轻触任一阶段，展开探索</p>
+        </div>
+        <div id="stage-content" class="stage-content" hidden>
+          <div class="content-heading"><div><p class="content-eyebrow" id="content-eyebrow"></p><h2 id="content-title"></h2></div><button class="text-button close-stage" type="button" id="close-stage"><span data-icon="close"></span>收起本阶段</button></div>
+          <p class="stage-intro" id="stage-intro"></p>
+          <div class="topic-menu" id="topic-menu" aria-label="一级菜单"></div>
+          <div class="stage-overview" id="stage-overview"></div>
+          <section class="topic-detail" id="topic-detail" aria-label="二级图文内容" hidden></section>
+        </div>
+      </section>
+    </main>
+    <footer class="exhibit-footer"><p id="interaction-status" role="status" aria-live="polite">四个阶段 · 轻触探索</p><p>交互与视觉确认稿<span class="footer-divider">/</span>素材暂用 · 透明效果以上屏为准</p></footer>
+  </div>
+</body>
+</html>
