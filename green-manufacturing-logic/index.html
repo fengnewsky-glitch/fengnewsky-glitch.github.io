@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" data-visualize-standalone>
+<html lang="zh-CN" data-visualize-standalone>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>绿色制造内容逻辑架构</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<style>:root{color-scheme:light;background:#fff}html,body{margin:0;background:#fff}body{box-sizing:border-box;padding:0}iframe{display:block;width:100%;height:100vh;margin:0 auto;border:0}</style>
 
 </head>
 <body>
@@ -1794,13 +1794,13 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div id=&quot;gy-board&quot; class=&quot;gy-board&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;style&gt;
-#gy-content-structure{font-family:&quot;Microsoft YaHei&quot;,&quot;PingFang SC&quot;,sans-serif;color:#111;background:#fff;padding:18px;box-sizing:border-box;line-height:1.7;font-size:14px;color-scheme:light}
+#gy-content-structure{font-family:&quot;Microsoft YaHei&quot;,&quot;PingFang SC&quot;,sans-serif;color:#111;background:#fff;padding:8px;box-sizing:border-box;line-height:1.7;font-size:14px;color-scheme:light;max-width:800px;margin:0 auto}
 #gy-content-structure *{box-sizing:border-box}
 #gy-content-structure [hidden]{display:none!important}
-#gy-content-structure .gy-header{padding-right:80px;margin-bottom:20px}
+#gy-content-structure .gy-header{padding-right:0;margin-bottom:20px}
 #gy-content-structure h1{font-size:20px;font-weight:500;margin:0 0 2px}
 #gy-content-structure .gy-header p{font-size:13px;margin:0;color:#333}
-#gy-content-structure .gy-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:&quot;b1 b2&quot; &quot;b4 b3&quot;;gap:28px;align-items:start}
+#gy-content-structure .gy-board{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:&quot;b1&quot; &quot;b2&quot; &quot;b3&quot; &quot;b4&quot;;gap:22px;align-items:start}
 #gy-content-structure .gy-block{min-width:0}
 #gy-content-structure .gy-block[data-block=&quot;0&quot;]{grid-area:b1}
 #gy-content-structure .gy-block[data-block=&quot;1&quot;]{grid-area:b2}
@@ -1830,7 +1830,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 #gy-content-structure th{font-weight:500}
 #gy-content-structure td:last-child{width:38%;font-variant-numeric:tabular-nums}
 #gy-content-structure .gy-collapse{border:none;padding:8px;min-height:44px;margin:8px 0 0;background:#fff;color:#666;font-size:13px;border-radius:4px;text-align:left}
-@media(max-width:540px){#gy-content-structure{padding:16px}#gy-content-structure .gy-board{grid-template-columns:minmax(0,1fr);grid-template-areas:&quot;b1&quot; &quot;b2&quot; &quot;b3&quot; &quot;b4&quot;;gap:22px}}
+@media(max-width:540px){#gy-content-structure{padding:8px}#gy-content-structure .gy-board{grid-template-columns:minmax(0,1fr);grid-template-areas:&quot;b1&quot; &quot;b2&quot; &quot;b3&quot; &quot;b4&quot;;gap:22px}}
 &lt;/style&gt;
 &lt;script&gt;
 (() =&gt; {
